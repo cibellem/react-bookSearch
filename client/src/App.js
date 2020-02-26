@@ -1,9 +1,10 @@
 import React from "react";
+import SearchBox from "./Components/SearchBox/index";
 
 function App() {
   return (
-    <div>
-      <p>test</p>
+    <div className="container ">
+      <SearchBox />
     </div>
   );
 }
