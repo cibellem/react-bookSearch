@@ -1,28 +1,17 @@
 import React from "react";
 
 function BookCard(props, results) {
-  const newArray = props.results;
-
-  console.log(newArray[0]);
-  console.log(newArray);
-  // console.log(props);
-  newArray.map(item => {
-    console.log(item.title);
-  });
-
-  resultAPi;
+  console.log(props);
 
   return (
     <div>
-      <ul>
-        {newArray.map(result => (
+      {props.results.map(result => (
+        <ul className="table" key={result.title}>
           <li>
-            {" "}
-            <p>{result.tittle}</p>
+            <p>{result.title}</p>
           </li>
-        ))}
-      </ul>
-      <p>FUCK</p>
+        </ul>
+      ))}
     </div>
   );
 }

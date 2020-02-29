@@ -4,21 +4,21 @@ import "./index.css";
 import BookCard from "../BookCard";
 
 function SearchBox() {
-  const [search, setSearch] = useState([""]);
-  const results = [];
+  // search will hold the inital Title/word searched. It's needed for the API call
+  //result holds the api response with the data in the format I want, them I passed down trough props to create the book card
+  const [search, setSearch] = useState("");
+  const [result, setResult] = useState([]);
 
   function handleSearch() {
     API.getBook(search).then(res => {
       const resultAPi = res.data.items;
-      // console.log(resultAPi);
-      // console.log(resultAPi.volumeInfo);
+      const newArray = [];
+
       resultAPi.forEach(item => {
         const newObj = item.volumeInfo;
-        results.push(newObj);
-        // console.log(newObj);
-        console.log(results);
-        // setSearch(newObj);
+        newArray.push(newObj);
       });
+      setResult(newArray);
     });
   }
 
@@ -41,7 +41,7 @@ function SearchBox() {
           Search
         </button>
       </div>
-      <BookCard results={results} />
+      <BookCard results={result} />
     </div>
   );
 }
