@@ -1,23 +1,41 @@
-@import url("https://fonts.googleapis.com/css?family=Caladea&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
 .search-box {
-  margin-top: 40vh;
+  margin-top: 15vh;
   align-items: center;
-  font-family: "Caladea";
-  margin-left: 250px;
+}
+
+.search-label {
+  font-family: "Spartan";
+  font-size: 20px;
 }
 
 .search-button {
-  background-color: purple;
-  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.616);
+  background-color: black;
+  box-shadow: 0px 2px 4px rgba(121, 121, 121, 0.616);
   padding: 13px;
-  color: plum;
-  border-radius: 50%;
+  color: white;
+  font-weight: 600;
+
   font-size: 13px;
   text-align: center;
   vertical-align: middle;
   margin-top: -6px;
-  border-bottom: solid 3px #c5c3c3;
-  opacity: 0.5;
-  letter-spacing: 1px;
-  transition: 0.6s;
+  border: none;
+  width: 150px;
+  letter-spacing: 1.5px;
+
+  font-family: "Spartan";
+}
+
+.search-button:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.616);
+}
+
+.input-row input {
+  margin: 3px;
+  background-color: white;
+}
+
+input[type="text"] {
+  background: #f1f1f1;
 }

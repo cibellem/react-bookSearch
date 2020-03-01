@@ -5,7 +5,7 @@ import BookCard from "../BookCard";
 
 function SearchBox() {
   // search will hold the inital Title/word searched. It's needed for the API call
-  //result holds the api response with the data in the format I want, them I passed down trough props to create the book card
+  //result holds the api response with the data in the format I want, them I passe down trough props to create the book card
   const [search, setSearch] = useState("");
   const [result, setResult] = useState([]);
 
@@ -23,25 +23,37 @@ function SearchBox() {
   }
 
   return (
-    <div className=" search-box ">
+    <div className=" container search-box ">
       <div className="row">
-        <label htmlFor="search">Search a book tittle:</label>
+        <div className="col">
+          <div className="row">
+            <label className="search-label" htmlFor="search">
+              Search a book tittle/word/author:
+            </label>
+          </div>
+
+          <div className="row input-row ">
+            <input
+              className=" form-control  col-10 search-input"
+              type="text"
+              name="search"
+              id="searchInput"
+              value={search}
+              onChange={event => setSearch(event.target.value)}
+            />
+            <button
+              className="search-button button "
+              onClick={() => handleSearch()}
+            >
+              Find Book
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div className="row ">
-        <input
-          className="  col-10 search-input"
-          type="text"
-          name="search"
-          id="searchInput"
-          value={search}
-          onChange={event => setSearch(event.target.value)}
-        />
-        <button className="search-button" onClick={() => handleSearch()}>
-          Search
-        </button>
-      </div>
-      <BookCard results={result} />
+      <section className="container-fluid">
+        <BookCard results={result} search={search} />
+      </section>
     </div>
   );
 }
