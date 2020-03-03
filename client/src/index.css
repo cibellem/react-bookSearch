@@ -1,3 +1,9 @@
-.div-search-box {
-  background-color: red;
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+.bookQuote {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  font-style: italic;
+  color: #6b6969;
+  font-family: Spartan;
 }

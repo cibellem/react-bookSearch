@@ -5,5 +5,8 @@ export default {
     return axios.get(
       `https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyAQyE5qbJ1H76JhCYlBO72T6qYHyv5TjQ8`
     );
+  },
+  saveBook: function(bookData) {
+    return axios.post("api/books", bookData);
   }
 };

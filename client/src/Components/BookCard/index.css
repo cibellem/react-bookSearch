@@ -15,6 +15,14 @@
   letter-spacing: 0.8px;
   color: #363636;
   text-align: center;
+}
+
+.book-card-container h5 {
+  font-weight: 600;
+  font-family: "Caladea";
+  font-size: 16px;
+  color: #363636;
+  text-align: center;
   margin-top: 5px;
 }
 .book-cover {
@@ -39,4 +47,12 @@
   /* box-shadow: 0px 2px 5px silver; */
   /* border-radius: 10px; */
   opacity: 0.9;
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.fa-heart:hover {
+  color: red;
 }

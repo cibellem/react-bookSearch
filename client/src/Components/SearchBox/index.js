@@ -28,7 +28,7 @@ function SearchBox() {
         <div className="col">
           <div className="row">
             <label className="search-label" htmlFor="search">
-              Search a book tittle/word/author:
+              Search a book by tittle/word/author:
             </label>
           </div>
 

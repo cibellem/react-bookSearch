@@ -1,16 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Caladea&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+
 body {
   background-color: #f8f8f8;
 }
 
 .nav-bg {
-  background-image: url("./images/bookbg.jpg");
-  background-position: center;
+  background-image: url("./images/bookbg(2).jpg");
+  background-position: top;
   background-attachment: fixed;
   background-size: cover;
-  opacity: 0.7;
+  opacity: 0.8;
+
   box-shadow: 0px 2px 8px rgb(155, 155, 155);
 }
 
 .nav-div {
-  height: 30vh;
+  height: 40vh;
 }
