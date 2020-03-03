@@ -11,8 +11,6 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
@@ -20,7 +18,8 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("Connected to the booksDB!")
 );
-
+// Add routes, both API and view
+app.use(routes);
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
