@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import "./index.css";
 import Api from "../../Utils/Api";
 function BookCard(props, results, search) {
-  const [favorites, setFavorites] = useState([""]);
+  const [favorites, setFavorites] = useState([]);
 
-  console.log(props);
+  //I want to add logic to the icon
+  // const [icon, setIcon] = useState(false, (style = {{ color: "blue" }));
+
+  console.log(favorites);
 
   function saveBook(result) {
     const bookData = {
@@ -17,6 +20,9 @@ function BookCard(props, results, search) {
     Api.saveBook(bookData).then(res =>
       console.log("Book added to Favorites and saved to database")
     );
+
+    //push the new book object to the end of the array of favorites
+    setFavorites(prevArray => [...prevArray, bookData]);
   }
   return (
     <div className="book-card-container  ">

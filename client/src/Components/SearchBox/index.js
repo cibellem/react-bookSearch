@@ -34,7 +34,7 @@ function SearchBox() {
 
           <div className="row input-row ">
             <input
-              className=" form-control  col-10 search-input"
+              className=" form-control  col-md-10 col-sm-12 search-input"
               type="text"
               name="search"
               id="searchInput"
@@ -46,6 +46,7 @@ function SearchBox() {
               onClick={() => handleSearch()}
             >
               Find Book
+              <i class="mx-2 fas fa-search"></i>
             </button>
           </div>
         </div>
