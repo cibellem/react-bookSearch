@@ -11,11 +11,10 @@
     "axios": "^0.18.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "reactbulma": "^3.0.4"
+    "eject": "react-scripts eject"
   },
   "browserslist": [
     ">0.2%",
