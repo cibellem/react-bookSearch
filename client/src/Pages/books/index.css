@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
 .search-box {
   margin-top: 15vh;
   align-items: center;
@@ -49,4 +49,4 @@ input[type="text"] {
   .search-button {
     margin-left: 112px;
   }
-} */
+}

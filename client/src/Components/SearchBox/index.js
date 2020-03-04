@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import API from "../../Utils/Api";
 import "./index.css";
-import BookCard from "../BookCard";
 
 function SearchBox() {
   // search will hold the inital Title/word searched. It's needed for the API call
@@ -51,10 +50,6 @@ function SearchBox() {
           </div>
         </div>
       </div>
-
-      <section className="container-fluid">
-        <BookCard results={result} search={search} />
-      </section>
     </div>
   );
 }

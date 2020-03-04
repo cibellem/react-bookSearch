@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./index.css";
 import Api from "../../Utils/Api";
-function BookCard(props, results, search) {
+import Favorites from "../../Pages/favorites";
+
+function BookCard(props) {
   const [favorites, setFavorites] = useState([]);
 
   //I want to add logic to the icon

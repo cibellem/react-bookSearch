@@ -7,6 +7,9 @@ export default {
     );
   },
   saveBook: function(bookData) {
-    return axios.post("api/books", bookData);
+    return axios.post("/api/books", bookData);
+  },
+  getAllFavorites: function() {
+    return axios.get("/api/books");
   }
 };
