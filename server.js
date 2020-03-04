@@ -8,8 +8,11 @@ const path = require("path");
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Serve up static assets (usually on heroku)
-app.use(express.static(path.join(__dirname, "client", "build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // Add routes, both API and view
 app.use(routes);
