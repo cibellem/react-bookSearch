@@ -14,13 +14,13 @@ function App() {
       <>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={SearchBox} />
           <Route exact path="/favorites" component={Favorites} />
         </Switch>
         <h6 className="bookQuote">
           You don’t have to burn books to destroy a culture. Just get people to
           stop reading them.” – Ray Bradbury
         </h6>
+        <SearchBox />
 
         {!search ? <BookCard /> : null}
       </>
