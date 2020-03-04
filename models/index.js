@@ -1,3 +1,3 @@
-odule.exports = {
+module.exports = {
   Book: require("./book")
 };
