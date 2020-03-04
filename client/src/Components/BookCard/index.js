@@ -32,6 +32,10 @@ function BookCard(props) {
         {props.results.map(result => (
           <div key={result.title} className="col-md-3   col-sm-12  book-card">
             <img
+              onError={e => {
+                e.target.onerror = null;
+                e.target.src = "https://via.placeholder.com/150";
+              }}
               src={result.imageLinks.thumbnail}
               className="book-cover center-align"
               alt="Book Cover"
