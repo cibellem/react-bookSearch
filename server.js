@@ -19,8 +19,7 @@ const routes = require("./routes");
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://cibellem:root123@ds013414.mlab.com:13414/heroku_k2mq1snh",
+  process.env.MONGODB_URI || "mongodb://localhost/booksDB",
 
   {
     useNewUrlParser: true
