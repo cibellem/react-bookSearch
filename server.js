@@ -14,7 +14,9 @@ const PORT = process.env.PORT || 3001;
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/booksDB",
+  process.env.MONGODB_URI ||
+    "mongodb://cibellem:root123@ds151612.mlab.com:51612/heroku_p4m9rhb3",
+
   {
     useNewUrlParser: true
   },
