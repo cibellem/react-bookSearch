@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 //Importing files
-const routes = require("./routes/api");
+const routes = require("./routes");
 
 //Define globar variables
 const app = express();
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.use("/api", routes);
+app.use(routes);
 
 // Start the API server
 app.listen(PORT, function() {
