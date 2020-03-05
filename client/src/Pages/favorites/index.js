@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Api from "../../Utils/Api";
-import "./index.css";
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
@@ -15,12 +14,22 @@ function Favorites() {
       .then(res => setFavorites(res.data))
       .catch(err => console.log(err));
   }
+
+  function deleteBook(result) {
+    const id = result._id;
+    Api.deleteBook(id).then(res => console.log(res.data));
+    window.location.reload();
+  }
+
   console.log(favorites);
   return (
     <div className="book-card-container  ">
+      <h5>
+        Your Favorite list <i className="far fa-heart"></i>
+      </h5>
       <div className="row">
         {favorites.map(result => (
-          <div key={result.title} className="col-md-3   col-sm-12  book-card">
+          <div key={result._id} className="col-md-3   col-sm-12  book-card">
             <img
               src={result.cover}
               className="book-cover center-align"
@@ -30,6 +39,9 @@ function Favorites() {
             <h6> {result.subtitle}</h6>
             <h6>Author: {result.authors}</h6>
             <h6>Category: {result.categories}</h6>{" "}
+            <button onClick={() => deleteBook(result)}>
+              <i class="far fa-trash-alt"></i>
+            </button>
           </div>
         ))}
       </div>

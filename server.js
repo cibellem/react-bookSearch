@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const routes = require("./routes");
 
 const path = require("path");
 
@@ -13,9 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-//Importing files
-const routes = require("./routes");
+// Add routes, both API and view
+app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
@@ -30,8 +30,6 @@ mongoose.connect(
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
-
-app.use(routes);
 
 // Start the API server
 app.listen(PORT, function() {
