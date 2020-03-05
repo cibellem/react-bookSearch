@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 //Importing files
-const routes = require("./routes");
+const routes = require("./routes/api");
 
 //Define globar variables
 const app = express();
@@ -22,9 +22,8 @@ mongoose.connect(
 );
 
 // configuration
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/", routes);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Serve up static assets (usually on heroku)
 
@@ -35,6 +34,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
+
+app.use("/api", routes);
 
 // Start the API server
 app.listen(PORT, function() {
