@@ -7,17 +7,17 @@ import SearchBox from "./Pages/books/index";
 
 function App() {
   return (
-    <Router>
-      <>
-        <NavBar />
+    <>
+      <NavBar />
+      <Router>
         <Switch>
           <Route exact path="/favorites" component={Favorites} />
           <Route exact path="/" component={SearchBox} />
         </Switch>
 
         {/* {!search ? <BookCard /> : null} */}
-      </>
-    </Router>
+      </Router>
+    </>
   );
 }
 
