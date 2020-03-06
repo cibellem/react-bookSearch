@@ -12,7 +12,11 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run client && npm run build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +28,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.9.3"
+    "mongoose": "^5.3.16"
   }
 }
