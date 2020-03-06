@@ -22,7 +22,7 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI ||
-    "mongodb://user1:root123@ds121686.mlab.com:21686/heroku_f7152v47",
+    "mongodb://user:root1234@ds121686.mlab.com:21686/heroku_h2899t4b",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
 import Api from "../../Utils/Api";
-import Favorites from "../../Pages/favorites";
 
 function BookCard(props) {
   const [favorites, setFavorites] = useState([]);
