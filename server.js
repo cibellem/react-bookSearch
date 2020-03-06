@@ -18,6 +18,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
+
+mongoose.set("debug", true);
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/booksDB",
   { useNewUrlParser: true, useUnifiedTopology: true },
