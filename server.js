@@ -20,8 +20,7 @@ require("./routes/")(app);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://cibelle:root123@ds145178.mlab.com:45178/heroku_td3h5gnm",
+  process.env.MONGODB_URI || "mongodb://localhost/booksdb",
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("Connected to the the DB!")
 );
