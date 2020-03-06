@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-var bodyParser = require("body-parser");
 
 dotenv.config();
 
@@ -19,7 +18,11 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 require("./routes/API")(app);
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksDB", {});
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/booksDB",
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => console.log("Connected to the the DB!")
+);
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
