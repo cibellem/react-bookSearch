@@ -2,6 +2,8 @@
   "name": "react-book-search",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://react-book-shelfie.herokuapp.com/",
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
