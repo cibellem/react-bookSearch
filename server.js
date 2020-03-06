@@ -20,15 +20,14 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://user:root1234@ds121686.mlab.com:21686/heroku_h2899t4b",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+// });
 
 app.listen(PORT, () => {
   console.log(`======> App listenning on  ${PORT}!`);
