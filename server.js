@@ -19,7 +19,8 @@ if (process.env.NODE_ENV === "production") {
 require("./routes/API")(app);
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/booksDB",
+  process.env.MONGODB_URI ||
+    "mongodb://cibelle:root123@ds145178.mlab.com:45178/heroku_td3h5gnm",
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("Connected to the the DB!")
 );
