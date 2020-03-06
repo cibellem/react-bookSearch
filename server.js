@@ -22,7 +22,8 @@ app.uses(routes);
 
 mongoose.set("debug", true);
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/booksDB",
+  process.env.MONGODB_URI ||
+    "mongodb://user:root123@ds249269.mlab.com:49269/heroku_2p9mg9gg",
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("Connected to the the DB!")
 );
