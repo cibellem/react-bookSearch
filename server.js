@@ -25,9 +25,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksDB", {
   useUnifiedTopology: true
 });
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`======> App listenning on  ${PORT}!`);
