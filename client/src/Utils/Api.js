@@ -14,5 +14,8 @@ export default {
   },
   deleteBook: function(id) {
     return axios.delete("/api/books/" + id);
+  },
+  getBookByTitle: function(bookTitle) {
+    return axios.get("/api/books/title/" + bookTitle);
   }
 };

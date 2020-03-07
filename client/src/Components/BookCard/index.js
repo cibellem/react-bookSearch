@@ -9,21 +9,30 @@ function BookCard(props) {
   // const [icon, setIcon] = useState(false, (style = {{ color: "blue" }));
 
   console.log(favorites);
-
+  //check in the db if favorite book it's already there, if so does not post
   function saveBook(result) {
-    const bookData = {
-      title: result.title,
-      cover: result.imageLinks.thumbnail,
-      author: result.authors,
-      category: result.categories
-    };
+    const bookTitle = result.title;
+    Api.getBookByTitle(bookTitle).then(bookCheck => {
+      console.log(bookCheck.data);
+      if (!bookCheck.data) {
+        const bookData = {
+          title: result.title,
+          cover: result.imageLinks.thumbnail,
+          author: result.authors,
+          category: result.categories
+        };
 
-    Api.saveBook(bookData).then(res =>
-      console.log("Book added to Favorites and saved to database")
-    );
+        Api.saveBook(bookData).then(res =>
+          console.log("Book added to Favorites and saved to database")
+        );
 
-    //push the new book object to the end of the array of favorites
-    setFavorites(prevArray => [...prevArray, bookData]);
+        //push the new book object to the end of the array of favorites
+        setFavorites(prevArray => [...prevArray, bookData]);
+      } else {
+        //make alert UI friendly
+        alert("Book already in th favorites");
+      }
+    });
   }
   return (
     <div className="book-card-container  ">

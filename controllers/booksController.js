@@ -6,12 +6,21 @@ module.exports = {
     db.Book.find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(422).json(err + "test"));
   },
   findById: function(req, res) {
     db.Book.findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  findByTitle: function(req, res) {
+    db.Book.findOne({ title: req.params.title }).then(book => {
+      if (book) {
+        return res.json(true);
+      } else {
+        return res.json(false);
+      }
+    });
   },
   create: function(req, res) {
     db.Book.create(req.body)

@@ -7,6 +7,8 @@ router
   .get(booksController.findAll)
   .post(booksController.create);
 
+router.get("/title/:title", booksController.findByTitle);
+
 // Matches with "/api/books/:id"
 router
   .route("/:id")
