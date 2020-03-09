@@ -4,7 +4,7 @@
 
 ### Description
 
-Book Search built with MongoDD,Express , React ,Node and Google Books Api. You can browse for books, read about them and save your favorites to the DB.
+Book Search built with MongoDB,Express , React ,Node and Google Books Api. You can browse for books, read about them and save your favorites to the DB.
 
 ### Technologies-Libraries:
 
