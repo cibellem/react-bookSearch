@@ -39,9 +39,9 @@ class Login extends Component {
     try {
       const user = await Auth.signIn(this.state.username, this.state.password);
       console.log(user);
-      this.props.auth.setAuthStatus(true);
-      this.props.auth.setUser(user);
-      this.props.history.push("/");
+      // setAuthStatus(true);
+      // this.Auth.setUser(user);
+      this.props.history.push("/home");
     } catch (error) {
       let err = null;
       !error.message ? (err = { message: error }) : (err = error);
@@ -63,16 +63,36 @@ class Login extends Component {
 
   render() {
     return (
-      <section className="section auth">
-        <div className="container">
-          <h1>Log in</h1>
-          <FormErrors formerrors={this.state.errors} />
+      <>
+        <nav className="login-nav">
+          <h2 className="nav-link logo"> Book Shelfie </h2>
+          <h6 className="logo-description">
+            Browse books and save your favotires one to read later
+          </h6>
+          <ul class="nav justify-content-end">
+            <li className="nav-item">
+              {" "}
+              <a className="nav-link register-link" href="/register">
+                Register
+              </a>
+            </li>
+            <li className="nav-item">
+              {" "}
+              <a className="nav-link login-link" href="/login">
+                Login
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <section className="section auth">
+          <div className=" login-container  container-fluid">
+            <FormErrors formerrors={this.state.errors} />
 
-          <form onSubmit={this.handleSubmit}>
-            <div className="field">
-              <p className="control">
+            <form className="col-6 login-form" onSubmit={this.handleSubmit}>
+              <h4>Log in</h4>
+              <div className="form-group">
                 <input
-                  className="input"
+                  className="form-control"
                   type="text"
                   id="username"
                   aria-describedby="usernameHelp"
@@ -80,36 +100,31 @@ class Login extends Component {
                   value={this.state.username}
                   onChange={this.onInputChange}
                 />
-              </p>
-            </div>
-            <div className="field">
-              <p className="control has-icons-left">
+              </div>
+              <div className="form-group">
                 <input
-                  className="input"
+                  className="form-control"
                   type="password"
                   id="password"
                   placeholder="Password"
                   value={this.state.password}
                   onChange={this.onInputChange}
                 />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-lock"></i>
-                </span>
-              </p>
-            </div>
-            <div className="field">
-              <p className="control">
-                <a href="/forgotpassword">Forgot password?</a>
-              </p>
-            </div>
-            <div className="field">
-              <p className="control">
-                <button className="button is-success">Login</button>
-              </p>
-            </div>
-          </form>
-        </div>
-      </section>
+              </div>
+              {/* <div className="field">
+                <p className="control">
+                  <a href="/forgotpassword">Forgot password?</a>
+                </p>
+              </div> */}
+              <div className="field">
+                <p className="control">
+                  <button className="button btn button-login">Login</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </section>
+      </>
     );
   }
 }

@@ -94,10 +94,11 @@ class Register extends Component {
           </ul>
         </nav>
         <section className="section auth">
-          <div className=" container-fluid">
+          <div className=" container-fluid register-container">
             <FormErrors formerrors={this.state.errors} />
 
             <form className="col-6 register-form" onSubmit={this.handleSubmit}>
+              <h4>Register</h4>
               <div className="form-group">
                 <input
                   className="form-control"
@@ -140,11 +141,7 @@ class Register extends Component {
                   onChange={this.onInputChange}
                 />
               </div>
-              <div className="field">
-                <p className="control">
-                  <a href="/forgotpassword">Forgot password?</a>
-                </p>
-              </div>
+
               <div className="field">
                 <p className="control">
                   <button className=" btn button register-button">
