@@ -10,6 +10,8 @@ function BookCard(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [message, setMessage] = useState(false);
+
   console.log(favorites);
   //check in the db if favorite book it's already there, if so does not post
   function saveBook(result) {
@@ -23,14 +25,13 @@ function BookCard(props) {
           category: result.categories
         };
 
-        Api.saveBook(bookData).then(res =>
-          console.log("Book added to Favorites and saved to database")
-        );
+        Api.saveBook(bookData).then(res => handleShow(true), setMessage(false));
 
         //push the new book object to the end of the array of favorites
         setFavorites(prevArray => [...prevArray, bookData]);
       } else {
-        handleShow(true);
+        setMessage(true);
+        console.log("Book already in DB");
       }
     });
   }
@@ -42,10 +43,15 @@ function BookCard(props) {
           closeButton
         ></Modal.Header>
         <Modal.Body className="modal-body-bookCard">
-          It looks like this book it's already in your favorites{" "}
-          <i class="fas fa-heart"></i>
+          Book successfully added to favorites <i class="fas fa-heart"></i>
         </Modal.Body>
       </Modal>
+
+      <h6 className="book-in-db" style={message ? {} : { display: "none" }}>
+        It looks like this book it's already in your favorites
+        <i className="fas fa-heart"></i>
+      </h6>
+
       <div className="book-card-container  ">
         <div className="row">
           {props.results.map(result => (
