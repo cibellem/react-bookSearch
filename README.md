@@ -14,6 +14,7 @@ Book Search built with MongoDD,Express , React ,Node and Google Books Api. You c
 
 ![demogif](shelfie.gif)
 
-# Link to the deployed application
+### Link to the deployed application
+Check it out!
 
 https://react-book-shelfie.herokuapp.com/
