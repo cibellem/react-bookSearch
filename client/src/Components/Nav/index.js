@@ -7,7 +7,7 @@ function NavBar() {
       <div className="nav-div overlay">
         <ul className=" nav-ul nav justify-content-end">
           <li className="nav-item">
-            <a className="nav-link navLink" href="/home">
+            <a className="nav-link navLink" href="/">
               Home
               <i className="fas fa-home mx-2"></i>
             </a>
