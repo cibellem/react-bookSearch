@@ -56,3 +56,14 @@
 .fa-heart:hover {
   color: red;
 }
+
+.modal-body-bookCard {
+  font-family: "Caladea";
+  font-size: 14px !important;
+  letter-spacing: 0.5px;
+  padding: 20px;
+}
+
+.modal-header-bookCard {
+  padding: 5px !important;
+}

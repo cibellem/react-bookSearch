@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import API from "../../Utils/Api";
 import "./index.css";
 import BookCard from "../../Components/BookCard/index";
+import NavBar from "../../Components/Nav/index";
 
 function SearchBox() {
   // search will hold the inital Title/word searched. It's needed for the API call
@@ -24,6 +25,7 @@ function SearchBox() {
 
   return (
     <>
+      <NavBar />
       <h6 className="bookQuote">
         You don’t have to burn books to destroy a culture. Just get people to
         stop reading them.” – Ray Bradbury

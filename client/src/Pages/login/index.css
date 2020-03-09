@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+
+.button-login {
+  background-color: deeppink;
+  color: white;
+  border: 2px solid rgb(236, 151, 201);
+  font-family: Spartan;
+}
+
+.login-form {
+  margin: 0 auto !important;
+  /* width: 250px; */
+  padding: 0px !important;
+  margin-top: 20vh !important;
+  border: 2px solid rgb(197, 195, 195);
+  padding: 20px !important;
+  border-radius: 8px;
+}
+
+.label-login {
+  font-size: 14px;
+  color: gray;
+}
+.logo {
+  font-size: 50px;
+  font-family: Spartan;
+  margin-top: 2px;
+  color: #363636;
+}
+
+.logo-description {
+  font-family: Spartan;
+  color: #363636;
+  margin-left: 20px;
+}
+
+.placeholder {
+  font-size: 12px !important;
+}
+.login-nav {
+  height: 20vh;
+  background-color: whitesmoke;
+}
+
+.login-container h4 {
+  font-family: Spartan;
+  color: #363636;
+}
