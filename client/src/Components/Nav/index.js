@@ -1,25 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 function NavBar() {
   return (
-    <nav className="nav-bg">
-      <div className="nav-div overlay">
-        <ul className=" nav-ul nav justify-content-end">
-          <li className="nav-item">
-            <a className="nav-link navLink" href="/">
-              Home
-              <i className="fas fa-home mx-2"></i>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link navLink" href="/favorites">
-              Favorites
-              <i className="fas fa-heart mx-2"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <nav className="nav-bar  nav justify-content-end ">
+      <div className="wrapper"></div>
+      <Link className="nav-link navLink " to="/">
+        Home <i className="fas fa-home my-3 mx-2"></i>
+      </Link>
+      <Link className="nav-link navLink  " to="favorites">
+        Favorites <i className="fas fa-heart my-3 mx-2"></i>
+      </Link>
     </nav>
   );
 }

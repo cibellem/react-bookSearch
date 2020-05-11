@@ -13,19 +13,24 @@
 }
 
 .favorite-header {
-  font-family: caladea;
+  font-family: spartan;
   text-align: center;
   margin-top: 20px;
   font-size: 25px;
 }
 
 .book-favorites-container h5 {
-  font-family: caladea;
+  font-family: spartan;
+  font-size: 16px;
   text-align: center;
   margin-top: 5px;
+  letter-spacing: 0;
+  font-weight: bold;
 }
 
 .book-favorites-container h6 {
-  font-family: caladea;
-  text-align: center;
+  font-family: spartan;
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0;
 }

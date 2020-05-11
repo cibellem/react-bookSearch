@@ -1,15 +1,1 @@
 @import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
-.bookQuote {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 18px;
-  font-style: italic;
-  color: #6b6969;
-  font-family: Spartan;
-}
-
-@media only screen and (max-width: 600px) {
-  .bookQuote {
-    font-size: 13px;
-  }
-}
