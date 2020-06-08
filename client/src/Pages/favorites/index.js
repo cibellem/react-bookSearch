@@ -28,11 +28,11 @@ function Favorites() {
       <NavBar />
 
       <div className=" book-card  ">
+        <div className="row text-center mb-5">
+          <h2 className="">Saved books</h2>
+        </div>
         {favorites.map((result) => (
           <div className=" container book-item card mb-4  ">
-            <div className="row text-center mb-5">
-              <h2 className="">Saved books</h2>
-            </div>
             <div className="row " key={result.title}>
               <div className="col-md-2 col-sm-4 book-cover ">
                 {" "}
