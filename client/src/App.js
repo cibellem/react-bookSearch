@@ -4,9 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import Favorites from "./Pages/favorites/index";
 import SearchBox from "./Pages/books/index";
-import Login from "./Pages/login/index";
-import Register from "./Pages/register/index";
-import Home from "./Pages/home/index";
+
 import { Auth } from "aws-amplify";
 
 class App extends Component {

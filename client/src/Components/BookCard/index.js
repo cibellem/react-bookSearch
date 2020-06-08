@@ -12,9 +12,10 @@ function BookCard(props) {
 
   //check in the db if favorite book it's already there, if so does not post
   function saveBook(result) {
-    const bookTitle = result.title;
-    Api.getBookByTitle(bookTitle).then((bookCheck) => {
-      if (!bookCheck.data) {
+    const title = result.title;
+    console.log(title);
+    Api.getBookByTitle(title).then((res) => {
+      if (!res.data) {
         const bookData = {
           title: result.title,
           cover: result.imageLinks.thumbnail,
@@ -25,6 +26,7 @@ function BookCard(props) {
 
         Api.saveBook(bookData).then(
           (res) => handleShow(true),
+
           setMessage(false)
         );
 
@@ -53,14 +55,12 @@ function BookCard(props) {
         <i className="fas fa-heart"></i>
       </h6>
 
-      <div className="book-card-container  ">
-        <div className="row">
-          {props.results.map((result) => (
-            <div
-              key={result.title}
-              className="col-md-4  col-lg-3 col-sm-12  book-card"
-            >
-              <div className="text-center mb-3 ">
+      <div className=" book-card  ">
+        {props.results.map((result) => (
+          <div className=" container book-item card mb-4  ">
+            <div className="row " key={result.title}>
+              <div className="col-md-2 col-sm-4 book-cover ">
+                {" "}
                 <img
                   onError={(e) => {
                     e.target.onerror = null;
@@ -71,35 +71,40 @@ function BookCard(props) {
                       ? ""
                       : result.imageLinks.thumbnail
                   }
-                  className="book-cover"
                   alt="Book Cover"
                 />
               </div>
-              <h5 className>
-                {" "}
-                <b>Title:</b> {result.title}
-              </h5>
-              <h6 className="sub-title">
-                {" "}
-                <b>{result.subtitle} </b>{" "}
-              </h6>
-              <h6>
-                {" "}
-                <b> Author:</b> {result.authors}
-              </h6>
-              <h6>
-                {" "}
-                <b>Category:</b>{" "}
-                {!result.categories ? "Not Specified" : result.categories}
-              </h6>{" "}
-              <i
-                onClick={() => saveBook(result)}
-                id={result.title}
-                className="far fa-heart"
-              ></i>
+              <div className="col-md-10 col-sm-8  ">
+                <div className="row">
+                  <div className="col">
+                    <h5>{result.title}</h5>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <h6> {result.authors}</h6>
+                  </div>
+                </div>
+                <div className="row ">
+                  <div className="col book-description ">
+                    <p>{result.description}</p>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-3">
+                    <p
+                      className=" save-button"
+                      onClick={() => saveBook(result)}
+                      id={result.title}
+                    >
+                      Add to favorites
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </>
   );

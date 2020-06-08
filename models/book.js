@@ -5,9 +5,9 @@ const bookSchema = new Schema({
   title: { type: String },
   author: { type: Array },
   category: { type: Array },
-  // description: { type: String },
+  description: { type: String },
   cover: { type: String },
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
 });
 
 const Book = mongoose.model("Book", bookSchema);

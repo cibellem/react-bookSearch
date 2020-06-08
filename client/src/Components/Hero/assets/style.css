@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montaga&family=Roboto+Slab:wght@900&display=swap");
+
+.reader-img {
+  height: auto;
+  width: 100%;
+}
+
+.hero-text h4 {
+  font-family: Montaga;
+  font-size: 40px;
+}
+
+.hero-container {
+  margin-top: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-text h4 {
+    font-family: Montaga;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 5vh;
+  }
+}

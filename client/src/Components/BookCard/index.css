@@ -1,54 +1,61 @@
-@import url("https://fonts.googleapis.com/css?family=Caladea&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
-
 .book-in-db {
-  font-family: "Spartan";
+  font-family: "Montaga", serif;
   color: #363636;
   text-align: center;
   font-size: 14px;
 }
-.book-card-container h6 {
-  font-family: "Spartan";
-  font-size: 14px;
+.book-item {
+  font-family: "Montaga", serif;
+  display: flex;
+  padding: 5px;
+}
+.book-card {
+  margin-top: 10vh;
+}
+.book-cover {
+  align-items: center;
+  display: flex;
+  justify-content: left;
+}
+
+.card {
+  border: none;
+}
+
+.book-card h5 {
+  font-weight: bold;
+  font-size: 22px;
+  color: black;
+}
+
+.book-card h6 {
+  font-size: 16px;
+  color: gray;
+}
+.book-description {
+  font-size: 15px;
   color: #363636;
 }
 .hide {
   display: none;
 }
+.save-button {
+  background-color: inherit;
+  border: 1px solid silver;
+  border-radius: 5px;
+  color: gray;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+}
+.save-button:hover {
+  background-color: #ff9163;
+  transition: 1s;
+  color: white;
+}
 
 .show {
   display: block;
-}
-.book-card-container h5 {
-  font-weight: 900;
-  font-family: "Spartan";
-  font-size: 16px;
-  color: #363636;
-  text-align: center;
-  letter-spacing: 0;
-  margin-top: 5px;
-}
-.sub-title {
-  text-align: center;
-  font-family: "Spartan";
-}
-.book-cover {
-  border-radius: 5px;
-  box-shadow: 0px 1px 5px rgb(105, 105, 105);
-}
-
-.book-card-container {
-  margin-top: 15px;
-  margin-right: 25px;
-  justify-content: space-evenly;
-}
-
-.book-card {
-  padding: 10px;
-  margin: 10px 40px;
-  border: 1px solid #adadad9f;
-  background-color: rgb(246, 246, 246);
-  box-shadow: 0px 4px 5px rgba(5, 5, 5, 0.383);
 }
 
 .fa-heart {

@@ -12,9 +12,10 @@ function Favorites() {
   }, []);
 
   function loadBooks() {
-    Api.getAllFavorites()
-      .then((res) => setFavorites(res.data))
-      .catch((err) => console.log(err));
+    Api.getAllFavorites().then((res) => {
+      console.log(res);
+      setFavorites(res.data);
+    });
   }
 
   function deleteBook(result) {
@@ -27,40 +28,49 @@ function Favorites() {
     <>
       <NavBar />
 
-      <div className="container book-favorites-container ">
-        <p className="favorite-header">
-          Your Favorite list <i className="far hear-icon-fav fa-heart"></i>
-        </p>
-        <div className="row">
-          {favorites.map((result) => (
-            <div key={result._id} className="col-md-3 col-sm-12 book-card">
-              <div className="text-center mb-3 ">
+      <div className=" book-card  ">
+        {favorites.map((result) => (
+          <div className=" container book-item card mb-4  ">
+            <div className="row " key={result.title}>
+              <div className="col-md-2 col-sm-4 book-cover ">
+                {" "}
                 <img
-                  src={result.cover}
-                  className="book-cover center-align"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://via.placeholder.com/150";
+                  }}
+                  src={result.cover === undefined ? "" : result.cover}
                   alt="Book Cover"
                 />
               </div>
-              <h5 className> Title: {result.title}</h5>
-              <h6> {result.subtitle}</h6>
-              <h6>
-                {" "}
-                <b>Author:</b> {result.author}
-              </h6>
-              <h6>
-                <b>Category:</b> {result.category}
-              </h6>{" "}
-              <div className="row float-right ">
-                <div className="col">
-                  <i
-                    onClick={() => deleteBook(result)}
-                    class="far  delete-icon fa-trash-alt"
-                  ></i>
+              <div className="col-md-10 col-sm-8  ">
+                <div className="row">
+                  <div className="col">
+                    <h5>{result.title}</h5>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <h6> {result.author}</h6>
+                  </div>
+                </div>
+                <div className="row ">
+                  <div className="col book-description ">
+                    <p>{result.description}</p>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-3">
+                    <i
+                      onClick={() => deleteBook(result)}
+                      class="far  delete-icon fa-trash-alt"
+                    ></i>
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </>
   );

@@ -1,36 +1,19 @@
-@import url("https://fonts.googleapis.com/css?family=Caladea&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
-
-/* body {
-  background-color: rgb(13, 41, 1);
-} */
-.nav-bar {
-  height: 30vh;
-  background: url("./images/lib.jpg");
-  background-position: top;
-  background-position-y: -150px;
-
-  background-size: cover;
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.233);
-}
+@import url("https://fonts.googleapis.com/css2?family=Montaga&family=Roboto+Slab:wght@900&display=swap");
 
 .navLink {
-  font-family: "Spartan";
-  color: #ffffff;
-  text-shadow: 2px 2px 2px rgb(14, 13, 13);
-  font-weight: bold;
-  font-size: 28px;
+  font-family: "Montaga", serif;
+  font-size: 20px;
   z-index: 10;
-}
 
+  color: #222222;
+}
+.navLink:hover {
+  text-decoration: underline #ff9163;
+  color: #ff9163;
+}
 @media only screen and (max-width: 600px) {
   .nav-bar {
-    height: 20vh;
-    background-position-y: 0;
-  }
-
-  .navLink {
-    font-size: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 }
