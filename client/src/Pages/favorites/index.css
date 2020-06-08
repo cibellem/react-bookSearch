@@ -2,35 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
 
 .delete-icon {
-  font-size: 1.5em;
+  font-size: 1em;
   align-items: center;
   cursor: pointer;
-  color: gray;
-}
-.hear-icon-fav {
-  font-size: 1.1em;
-  color: rgb(236, 86, 86);
-}
-
-.favorite-header {
-  font-family: spartan;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 25px;
-}
-
-.book-favorites-container h5 {
-  font-family: spartan;
-  font-size: 16px;
-  text-align: center;
-  margin-top: 5px;
-  letter-spacing: 0;
-  font-weight: bold;
-}
-
-.book-favorites-container h6 {
-  font-family: spartan;
-  text-align: left;
-  font-size: 14px;
-  letter-spacing: 0;
+  color: rgba(128, 128, 128, 0.582);
 }

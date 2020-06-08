@@ -1,6 +1,6 @@
 .book-in-db {
   font-family: "Montaga", serif;
-  color: #363636;
+  color: #8a8a8a;
   text-align: center;
   font-size: 14px;
 }
@@ -47,6 +47,7 @@
   cursor: pointer;
   text-align: center;
   font-size: 14px;
+  padding: 10px;
 }
 .save-button:hover {
   background-color: #ff9163;

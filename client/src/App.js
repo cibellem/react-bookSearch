@@ -5,7 +5,6 @@ import "./index.css";
 import Favorites from "./Pages/favorites/index";
 import SearchBox from "./Pages/books/index";
 
-import { Auth } from "aws-amplify";
 
 class App extends Component {
   render() {

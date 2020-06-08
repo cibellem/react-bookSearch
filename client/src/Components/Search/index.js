@@ -14,7 +14,6 @@ function SearchBox() {
 
   function handleSearch() {
     API.getBook(search).then((res) => {
-      console.log(res);
       const resultAPi = res.data.items;
       const newArray = [];
       resultAPi.forEach((item) => {
