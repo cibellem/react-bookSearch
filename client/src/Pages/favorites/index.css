@@ -7,3 +7,7 @@
   cursor: pointer;
   color: rgba(128, 128, 128, 0.582);
 }
+
+.book-card h2 {
+  font-family: Montaga;
+}

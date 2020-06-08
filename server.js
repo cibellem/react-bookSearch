@@ -23,8 +23,8 @@ app.use(routes);
 mongoose.set("debug", true);
 mongoose.connect(
   "mongodb://user:root123@ds249269.mlab.com:49269/heroku_2p9mg9gg",
-
-  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
+  // "mongodb://localhost/booksDB",
+  { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("Connected to the the DB!")
 );
 app.get("*", (req, res) => {
