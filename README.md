@@ -1,10 +1,10 @@
-# React Book Search MERN
+# React Book Search v2
 
 ![img](shelfie.png)
 
 ### Description
 
-Book Search built with MongoDB,Express , React ,Node and Google Books Api. You can browse for books, read about them and save your favorites to the DB.
+This is a Crud application built with MongoDB,Express , React ,Node and Google Books Api. You can browse for books, read about them and save your favorites to the DB.
 
 ### Technologies-Libraries:
 
@@ -12,9 +12,6 @@ Book Search built with MongoDB,Express , React ,Node and Google Books Api. You c
 - [Bootstrap](https://bootstrap.com/) <br>
 - [Google Books Api](https://developers.google.com/books)
 
-### Demo
-
-![demogif](shelfie.gif)
 
 ### Link to the deployed application:
 
