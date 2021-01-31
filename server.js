@@ -22,11 +22,14 @@ app.use(routes);
 
 mongoose.set("debug", true);
 mongoose.connect(
-  "mongodb://user:root123@ds249269.mlab.com:49269/heroku_2p9mg9gg",
+  "mongodb+srv://cibellem:<root>@cluster0.bnk4x.mongodb.net/heroku_0c59f6xp?retryWrites=true&w=majority",
   // "mongodb://localhost/booksDB",
+
+  
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("Connected to the the DB!")
 );
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
