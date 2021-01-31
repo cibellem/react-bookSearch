@@ -22,9 +22,13 @@ app.use(routes);
 
 mongoose.set("debug", true);
 mongoose.connect(
-  "mongodb+srv://cibellem:<root>@cluster0.bnk4x.mongodb.net/<booksdb>?retryWrites=true&w=majority",
+  "mongodb://cibellem:<root>@cluster0.bnk4x.mongodb.net/<booksdb>?retryWrites=true&w=majority",
   // "mongodb://localhost/booksDB",  
-  { useNewUrlParser: true, useUnifiedTopology: true },
+  {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true},
   () => console.log("Connected to the the DB!")
 );
 
