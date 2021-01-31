@@ -22,10 +22,8 @@ app.use(routes);
 
 mongoose.set("debug", true);
 mongoose.connect(
-  "mongodb+srv://cibellem:<root>@cluster0.bnk4x.mongodb.net/heroku_0c59f6xp?retryWrites=true&w=majority",
-  // "mongodb://localhost/booksDB",
-
-  
+  "mongodb+srv://cibellem:<root>@cluster0.bnk4x.mongodb.net/<booksdb>?retryWrites=true&w=majority",
+  // "mongodb://localhost/booksDB",  
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("Connected to the the DB!")
 );
