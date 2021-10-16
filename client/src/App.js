@@ -1,26 +1,22 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import "./index.css";
+import NavBar from "./Components/Nav";
 import Favorites from "./Pages/favorites/index";
 import SearchBox from "./Pages/books/index";
 
-
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <Router>
       <>
-        <Router>
-          <Switch>
-            <Route exact path="/favorites" component={Favorites} />
-            <Route exact path="/" component={SearchBox} />
-          </Switch>
-
-          {/* {!search ? <BookCard /> : null} */}
-        </Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/favorites" component={Favorites} />
+          <Route exact path="/" component={SearchBox} />
+        </Switch>
       </>
-    );
-  }
-}
+    </Router>
+  );
+};
 
 export default App;

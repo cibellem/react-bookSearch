@@ -19,16 +19,17 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 // Connect to the Mongo DB
-
 mongoose.set("debug", true);
 mongoose.connect(
-  "mongodb+srv://cibellem:root@cluster0.bnk4x.mongodb.net/booksdb?retryWrites=true&w=majority",
-  // "mongodb://localhost/booksDB",  
+  process.env.MONGO_DB_URI,
+  //DEV
+  // process.env.MONGO_DB_DEV,
   {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true},
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+  },
   () => console.log("Connected to the the DB!")
 );
 

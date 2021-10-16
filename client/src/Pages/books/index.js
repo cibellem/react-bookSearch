@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import API from "../../Utils/Api";
+import React from "react";
+
 import "./index.css";
 
 import NavBar from "../../Components/Nav/index";
@@ -10,11 +10,8 @@ function Books() {
   // search will hold the inital Title/word searched. It's needed for the API call
   //result holds the api response with the data in the format I want, them I passe down trough props to create the book card
 
-  const [result, setResult] = useState([]);
-
   return (
     <>
-      <NavBar />
       <Hero />
       <SearchBox />
     </>

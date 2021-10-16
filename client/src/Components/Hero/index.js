@@ -1,5 +1,6 @@
 import React from "react";
 import "./assets/style.css";
+
 function Hero() {
   return (
     <div className="container hero-container">

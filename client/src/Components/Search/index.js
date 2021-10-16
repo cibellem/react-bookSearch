@@ -3,8 +3,6 @@ import API from "../../Utils/Api";
 import "./style.css";
 
 import BookCard from "../../Components/BookCard/index";
-import NavBar from "../../Components/Nav/index";
-import Hero from "../../Components/Hero";
 
 function SearchBox() {
   // search will hold the inital Title/word searched. It's needed for the API call
@@ -27,7 +25,7 @@ function SearchBox() {
   return (
     <>
       {" "}
-      <div className="container">
+      <section className="container">
         <div className="input-group mb-3">
           <input
             type="text"
@@ -46,7 +44,7 @@ function SearchBox() {
         </div>
 
         <BookCard results={result} search={search} />
-      </div>
+      </section>
     </>
   );
 }
