@@ -12,11 +12,20 @@ dotenv.config();
 
 // Define middleware here
 
-const corsOptions = {
-  origin: "*",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
+app.options(
+  "*",
+  cors({
+    origin: "https://admiring-mcclintock-475a2f.netlify.app/",
+    optionsSuccessStatus: 200,
+  })
+);
+
+app.use(
+  cors({
+    origin: "https://admiring-mcclintock-475a2f.netlify.app/",
+    optionsSuccessStatus: 200,
+  })
+);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
