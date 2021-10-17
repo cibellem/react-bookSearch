@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
@@ -10,8 +11,13 @@ const routes = require("./routes");
 dotenv.config();
 
 // Define middleware here
-app.use(cors());
-app.options("*", cors());
+
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -19,6 +25,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+app.use(cors(corsOptions));
 
 app.use(routes);
 // Connect to the Mongo DB
