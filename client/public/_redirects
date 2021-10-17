@@ -1,4 +1,2 @@
 # Redirects from what the browser requests to what we serve
-/favorites              /
-
-/api/books
+https://react-book-shelfie.herokuapp.com/api/books
