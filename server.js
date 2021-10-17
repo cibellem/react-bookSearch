@@ -11,6 +11,7 @@ dotenv.config();
 
 // Define middleware here
 app.use(cors());
+app.options("*", cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
