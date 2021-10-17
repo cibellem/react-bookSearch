@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run builds",
+    "build": "npm run build",
     "CI": "npm run build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
