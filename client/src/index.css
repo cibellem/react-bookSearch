@@ -69,3 +69,122 @@ input[type="text"] {
     font-size: 13px;
   }
 }
+
+/* books card */
+.book-in-db {
+  font-family: "Montaga", serif;
+  color: #8a8a8a;
+  text-align: center;
+  font-size: 14px;
+}
+
+.book-item {
+  font-family: "Montaga", serif;
+  display: flex;
+  padding: 20px 10px 20px 10px;
+  flex-direction: column;
+  border-bottom: 1px solid #8a8a8a28;
+  margin-bottom: 20px;
+  align-items: center;
+  grid-gap: 20px;
+  gap: 20px;
+  background-color: #ff926312;
+  border-radius: 5px;
+}
+
+.book-item div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-item div:nth-child(1) {
+  border: 4px solid #ff9163;
+  padding: 6px;
+  border-radius: 3px;
+}
+
+.book-item img {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  height: auto;
+  width: 160px;
+  margin: auto;
+}
+
+.book-card {
+  margin-top: 10vh;
+}
+
+.book-card h5 {
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+.book-card h6 {
+  font-size: 16px;
+  color: rgba(128, 128, 128, 0.87);
+}
+
+.book-card p {
+  font-size: 14px;
+  color: rgba(24, 24, 24, 0.87);
+}
+
+.book-description {
+  font-size: 15px;
+  color: #363636;
+}
+.hide {
+  display: none;
+}
+.save-button {
+  background-color: inherit;
+  border: 1px solid silver;
+  border-radius: 5px;
+  color: gray;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+}
+.save-button:hover {
+  background-color: #ff9163;
+  transition: 1s;
+  color: white;
+}
+
+.show {
+  display: block;
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.fa-heart:hover {
+  color: red;
+}
+
+.modal-body-bookCard {
+  font-family: "Caladea";
+  font-size: 14px !important;
+  letter-spacing: 0.5px;
+  padding: 20px;
+}
+
+.modal-header-bookCard {
+  padding: 5px !important;
+}
+
+@media screen and (min-width: 800px) {
+  .book-item {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .book-item div:nth-child(2) {
+    display: block;
+  }
+}
