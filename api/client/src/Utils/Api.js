@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "https://react-book-shelfie.herokuapp.com";
+const baseURL = "https://guarded-falls-50845.herokuapp.com";
 
 export default {
   getBook: function (search) {

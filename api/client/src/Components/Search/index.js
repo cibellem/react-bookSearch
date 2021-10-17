@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import API from "../../Utils/Api";
 import "./style.css";
 
-import BookCard from "../../Components/BookCard/index";
+import BookCard from "../BookCard/index";
 
 function SearchBox() {
   // search will hold the inital Title/word searched. It's needed for the API call
