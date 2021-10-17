@@ -1,5 +1,4 @@
 # Redirects from what the browser requests to what we serve
 
-
-
-/*  https://react-book-shelfie.herokuapp.com 
+ /api/*  https://react-book-shelfie.herokuapp.com/:splat 200 
+ /* /index.html 200
