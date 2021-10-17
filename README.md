@@ -4,7 +4,10 @@
 
 ### Description
 
-This is a Crud application built with mongoDB ,Express.js , React,and Google Books Api. You can browse for books, read about them and save your favorites to the DB.
+This is a Crud application built with mongoDB ,Express.js , React,and Google Books Api. Users can retrieve books by title, author or key word from Google API, save them to the database and delete. 
+
+
+### Routes
 
 ### Technologies-Libraries:
 
