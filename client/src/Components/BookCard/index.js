@@ -55,57 +55,43 @@ function BookCard(props) {
         <i className="fas fa-heart"></i>
       </h6>
 
-      <div className=" book-card  ">
+      <section className=" book-card  ">
         {props.results.map((result) => (
-          <div className=" container book-item card mb-4  ">
-            <div className="row " key={result.title}>
-              <div className="col-md-2 col-sm-4 book-cover ">
-                {" "}
-                <img
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://via.placeholder.com/150";
-                  }}
-                  src={
-                    result.imageLinks === undefined
-                      ? ""
-                      : result.imageLinks.thumbnail
-                  }
-                  alt="Book Cover"
-                />
-              </div>
-              <div className="col-md-10 col-sm-8  ">
-                <div className="row">
-                  <div className="col">
-                    <h5>{result.title}</h5>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col">
-                    <h6> {result.authors}</h6>
-                  </div>
-                </div>
-                <div className="row ">
-                  <div className="col book-description ">
-                    <p>{result.description}</p>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-3">
-                    <p
-                      className=" save-button"
-                      onClick={() => saveBook(result)}
-                      id={result.title}
-                    >
-                      Add to favorites
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <section className="book-item " key={result.title}>
+            {" "}
+            <div>
+              <img
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/150";
+                }}
+                src={
+                  result.imageLinks === undefined
+                    ? ""
+                    : result.imageLinks.thumbnail
+                }
+                alt="Book Cover"
+              />
             </div>
-          </div>
+            <div>
+              <h5>{result.title}</h5>
+              <h6> {result.authors}</h6>
+              <p>
+                {result.description === undefined
+                  ? "No description available"
+                  : result.description}
+              </p>
+              <button
+                className=" save-button"
+                onClick={() => saveBook(result)}
+                id={result.title}
+              >
+                Add to favorites
+              </button>
+            </div>
+          </section>
         ))}
-      </div>
+      </section>
     </>
   );
 }
