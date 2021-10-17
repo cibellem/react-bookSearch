@@ -4,12 +4,20 @@
 
 ### Description
 
-This is a Crud application built with mongoDB ,Express.js , React,and Google Books Api. Users can retrieve books by title, author or key word from Google API, save them to the database and delete. 
+This is a Crud application built with React, Expres and MongoDB. Users can retrieve books by title, author or key word from Google books API. Users can also save them to the database and delete from their favorites. 
 
 
-### Routes
+### Endpoints
+GET     /api/books/
+CREATE  /api/books/:id
+DELETE  /api/books/:id
 
-### Technologies-Libraries:
+
+## Future
+- Add user authentication.
+- Add a separeted session based on user.
+
+### Technologies-Libraries-Third Party API:
 
 - [React.js](https://reactjs.org//)
 - [Bootstrap](https://bootstrap.com/) <br>
