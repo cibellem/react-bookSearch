@@ -4,7 +4,6 @@ import Api from "../../Utils/Api";
 import Modal from "react-bootstrap/Modal";
 
 function BookCard(props) {
-  const [favorites, setFavorites] = useState([]);
   const [message, setMessage] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -30,8 +29,6 @@ function BookCard(props) {
           setMessage(false)
         );
 
-        //push the new book object to the end of the array of favorites
-        setFavorites((prevArray) => [...prevArray, bookData]);
       } else {
         setMessage(true);
       }

@@ -2,7 +2,6 @@ import React from "react";
 
 import "./index.css";
 
-import NavBar from "../../Components/Nav/index";
 import Hero from "../../Components/Hero";
 import SearchBox from "../../Components/Search";
 
