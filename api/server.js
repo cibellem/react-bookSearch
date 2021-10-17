@@ -12,8 +12,6 @@ dotenv.config();
 // Define middleware here
 app.use(express.json());
 
-
-
 // Connect to the Mongo DB
 mongoose.set("debug", true);
 mongoose.connect(
@@ -33,9 +31,9 @@ app.use(routes);
 app.use(express.static(path.join(__dirname, "/client/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
 });
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`======> App listenning on  ${PORT}!`);
+  console.log("Server is running");
 });
