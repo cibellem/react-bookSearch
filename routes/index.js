@@ -3,10 +3,10 @@ const router = require("express").Router();
 const apiRoutes = require("./API");
 
 // API Routes
-router.use("https://react-book-shelfie.herokuapp.com/api", apiRoutes);
+router.use(apiRoutes);
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
+router.use(function (req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
