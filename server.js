@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 5000;
-const cors = require("cors");
+const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -10,8 +9,6 @@ const routes = require("./routes");
 dotenv.config();
 
 // Define middleware here
-app.use(cors());
-app.options("*", cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -22,11 +19,11 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 // Connect to the Mongo DB
+
 mongoose.set("debug", true);
 mongoose.connect(
   "mongodb+srv://cibellem:root@cluster0.bnk4x.mongodb.net/booksdb?retryWrites=true&w=majority",
-  //DEV
-  // process.env.MONGO_DB_DEV,
+  // "mongodb://localhost/booksDB",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

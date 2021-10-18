@@ -12,6 +12,7 @@ function Favorites() {
 
   function loadBooks() {
     Api.getAllFavorites().then((res) => {
+      console.log(res.data);
       setFavorites(res.data);
     });
   }

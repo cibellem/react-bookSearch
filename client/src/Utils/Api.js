@@ -1,5 +1,4 @@
 import axios from "axios";
-const baseURL = "https://react-book-shelfie.herokuapp.com";
 
 export default {
   getBook: function (search) {
@@ -8,10 +7,10 @@ export default {
     );
   },
   saveBook: function (bookData) {
-    return axios.post(`${baseURL}/api/books", ${bookData}`);
+    return axios.post(`/api/books", ${bookData}`);
   },
   getAllFavorites: function () {
-    return axios.get(`${baseURL}/api/books`);
+    return axios.get(`/api/books`);
   },
   deleteBook: function (id) {
     return axios.delete("/api/books/" + id);
