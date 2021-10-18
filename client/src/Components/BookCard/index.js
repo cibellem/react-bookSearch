@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 
 function BookCard(props) {
   const [message, setMessage] = useState(false);
+  const [favorites, setFavorites] = useState([]);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -12,7 +13,6 @@ function BookCard(props) {
   //check in the db if favorite book it's already there, if so does not post
   function saveBook(result) {
     const title = result.title;
-    console.log(title);
     Api.getBookByTitle(title).then((res) => {
       if (!res.data) {
         const bookData = {
@@ -23,12 +23,8 @@ function BookCard(props) {
           description: result.description,
         };
 
-        Api.saveBook(bookData).then(
-          (res) => handleShow(true),
-
-          setMessage(false)
-        );
-
+        Api.saveBook(bookData).then(handleShow(true), setMessage(false));
+        setFavorites((prevArray) => [...prevArray, bookData]);
       } else {
         setMessage(true);
       }
