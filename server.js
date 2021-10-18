@@ -17,11 +17,13 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+const uri = process.env.MONGODB_URI;
+
 app.use(routes);
 // Connect to the Mongo DB
 mongoose.set("debug", true);
 mongoose.connect(
-  process.env.MONGODB_URI,
+  uri,
   //DEV
   // process.env.MONGO_DB_DEV,
   {
