@@ -5,8 +5,6 @@ import NavBar from "./Components/Nav";
 import Favorites from "./Pages/favorites/index";
 import SearchBox from "./Pages/books/index";
 
-import "./index.css";
-
 const App = () => {
   return (
     <Router>
