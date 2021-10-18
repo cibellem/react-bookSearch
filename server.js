@@ -21,7 +21,7 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.set("debug", true);
 mongoose.connect(
-  `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.bnk4x.mongodb.net/booksdb?retryWrites=true&w=majority`,
+  process.env.MONGO_DB_URI,
   //DEV
   // process.env.MONGO_DB_DEV,
   {
