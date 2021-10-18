@@ -21,7 +21,7 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.set("debug", true);
 mongoose.connect(
-  process.env.MONGO_DB_URI,
+  "mongodb+srv://cibellem:root@cluster0.bnk4x.mongodb.net/booksdb?retryWrites=true&w=majority",
   //DEV
   // process.env.MONGO_DB_DEV,
   {
