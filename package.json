@@ -11,8 +11,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "build": "cd client && npm run CI",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install"
+    "client": "cd client && npm run start"
   },
   "author": "",
   "license": "ISC",
@@ -27,7 +26,6 @@
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.13.11",
-    "react-router-dom": "^5.3.0"
+    "mongoose": "^5.13.11"
   }
 }
