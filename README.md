@@ -17,12 +17,18 @@ DELETE  /api/books/:id
 - Add user authentication.
 - Add a separeted session based on user.
 
+## V2
+- Link to download ebook
+- Pagination
+- update query params 
+
 ### Technologies-Libraries-Third Party API:
 
 - [React.js](https://reactjs.org//)
 - [Bootstrap](https://bootstrap.com/) <br>
 - [mongoDB]() <br>
 - [Google Books Api](https://developers.google.com/books)
+
 
 
 ### Link to the deployed application:

@@ -1,35 +1,12 @@
 import React, { useState } from "react";
 import "./index.css";
-import Api from "../../Utils/Api";
 import Modal from "react-bootstrap/Modal";
 
 function BookCard(props) {
   const [message, setMessage] = useState(false);
-  const [favorites, setFavorites] = useState([]);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
-  //check in the db if favorite book it's already there, if so does not post
-  function saveBook(result) {
-    const title = result.title;
-    Api.getBookByTitle(title).then((res) => {
-      if (!res.data) {
-        const bookData = {
-          title: result.title,
-          cover: result.imageLinks.thumbnail,
-          author: result.authors,
-          category: result.categories,
-          description: result.description,
-        };
-
-        Api.saveBook(bookData).then(handleShow(true), setMessage(false));
-        setFavorites((prevArray) => [...prevArray, bookData]);
-      } else {
-        setMessage(true);
-      }
-    });
-  }
 
   return (
     <>
@@ -50,7 +27,7 @@ function BookCard(props) {
 
       <section className=" book-card  ">
         {props.results.map((result) => (
-          <section className="book-item " key={result.title}>
+          <section className="book-item " key={result.id}>
             {" "}
             <div>
               <img
@@ -74,13 +51,7 @@ function BookCard(props) {
                   ? "No description available"
                   : result.description}
               </p>
-              <button
-                className=" save-button"
-                onClick={() => saveBook(result)}
-                id={result.title}
-              >
-                Add to favorites
-              </button>
+        
             </div>
           </section>
         ))}

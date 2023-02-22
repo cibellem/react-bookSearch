@@ -1,20 +1,34 @@
-import React from "react";
-
+import React , { useState } from "react";
+import API from "../../Utils/Api";
 import "./index.css";
 
+import BookCard from "../../Components/BookCard/index";
 import Hero from "../../Components/Hero";
 import SearchBox from "../../Components/Search";
 
-function Books() {
-  // search will hold the inital Title/word searched. It's needed for the API call
-  //result holds the api response with the data in the format I want, them I passe down trough props to create the book card
+function MainPage() {
+  const [result, setResult] = useState([]);
+
+  const handleSearch=(search)=>{
+    API.getBook(search).then((res) => {
+      const resultAPi = res.data.items;
+      const newArray = [];
+      resultAPi.forEach((item) => {
+        const newObj = item.volumeInfo;
+        newArray.push(newObj);
+      });
+      setResult(newArray);
+    });
+
+  }
 
   return (
     <>
       <Hero />
-      <SearchBox />
-    </>
+      <SearchBox handleSearch={handleSearch} />
+      <BookCard results={result}  />
+      </>
   );
 }
 
-export default Books;
+export default MainPage;
